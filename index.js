@@ -104,14 +104,14 @@ var root = {
     restaurants = restaurants.filter(item => item.id !== id)
     return {ok}
   },
-  editrestaurant: ({ i, ...restaurant }) => {
-    if(!restaurants[i]) {
+  editrestaurant: ({ id, ...restaurant }) => {
+    if(!restaurants[id]) {
       throw new Error(`restaurant doesn't exist`)
     }
-    restaurants[i] = {
-      ...restaurants[i], ... restaurant
+    restaurants[id] = {
+      ...restaurants[id], ... restaurant
     }
-    return restaurants[i]
+    return restaurants[id]
   },
 };
 var app = express();
